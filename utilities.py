@@ -11,15 +11,12 @@ def parser(file_input):
 
 	return lines
 
-def _deparser(file_output):
-	return file_output.encode('utf-8').decode('utf-8')
-
 def append_item_to_file(item, file_name):
 	if item[-1] != '\n':
 		item = item+'\n'
 
 	with open(file_name, 'a') as f:
-		f.write(_deparser(item))
+		f.write(item)
 
 def delete_item_from_file(item, file_name):
 	with open(file_name, 'a+b') as f:
@@ -29,4 +26,4 @@ def delete_item_from_file(item, file_name):
 	with open(file_name, 'w') as f:
 		for line in lines:
 			if item.strip() != line.strip():
-				f.write(_deparser(line))
+				f.write(line)
