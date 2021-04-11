@@ -4,7 +4,7 @@ from utilities import parser
 
 class ListWidget(QListWidget):
 	def __init__(self, file_name, mode=''):
-		super().__init__()
+		super().__init__(minimumHeight=515)
 
 		with open(file_name, 'a+b') as f:
 			f.seek(0)
