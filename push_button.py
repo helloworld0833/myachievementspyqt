@@ -26,7 +26,7 @@ class ButtonDone(QPushButton):
 
 			now = datetime.datetime.now()
 			item_and_time = '{} {}/{}/{}\n'.format(item.text(), now.month, now.day, now.year)
-			complete_widget = self.vbox_layout_widget.next_vbox_layout_widget.next_vbox_layout_widget
+			complete_widget = self.vbox_layout_widget.next_vbox_layout_widget.next_vbox_layout_widget.next_vbox_layout_widget
 			complete_widget.list_widget.addItem(item_and_time.strip())
 
 			achievement_points = complete_widget.text_browser.toPlainText().split(' ')

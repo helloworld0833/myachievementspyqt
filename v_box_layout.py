@@ -38,12 +38,15 @@ class VBoxLayoutWidget(QWidget):
 			self.list_widget = ListWidget(file_name)
 			vertical_box_layout.addWidget(self.list_widget)
 
-			button_done = ButtonDone(self, file_name)
-			button_delete = ButtonDelete(self.list_widget, file_name)
-
 			horizontal_box_layout = QHBoxLayout()
-			horizontal_box_layout.addWidget(button_done)
+
+			if file_usage != 'note':
+				button_done = ButtonDone(self, file_name)
+				horizontal_box_layout.addWidget(button_done)
+
+			button_delete = ButtonDelete(self.list_widget, file_name)
 			horizontal_box_layout.addWidget(button_delete)
+
 			widget = QWidget()
 			widget.setLayout(horizontal_box_layout)
 			vertical_box_layout.addWidget(widget)

@@ -11,7 +11,7 @@ class Window(QMainWindow):
 		main_horizontal_box_layout = QHBoxLayout()
 
 		prior_widget = None
-		for file_name in [('dashboard', 'work'), ('dashboard', 'fun'), ('complete', 'work'), ('complete', 'fun')]:
+		for file_name in [('dashboard', 'work'), ('dashboard', 'fun'), ('dashboard', 'note'), ('complete', 'work'), ('complete', 'fun')]:
 			widget = VBoxLayoutWidget()
 			widget.set_layout(file_name)
 
