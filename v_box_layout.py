@@ -34,22 +34,28 @@ class VBoxLayoutWidget(QWidget):
 
 			self.list_widget = ListWidget(file_name, 'recent')
 			vertical_box_layout.addWidget(self.list_widget)
+
+			button_delete = ButtonDelete(self.list_widget, file_name)
+			vertical_box_layout.addWidget(button_delete)
 		else:
 			self.list_widget = ListWidget(file_name)
 			vertical_box_layout.addWidget(self.list_widget)
 
-			horizontal_box_layout = QHBoxLayout()
+			if file_usage == 'note':
+				button_delete = ButtonDelete(self.list_widget, file_name)
+				vertical_box_layout.addWidget(button_delete)
+			else:
+				horizontal_box_layout = QHBoxLayout()
 
-			if file_usage != 'note':
 				button_done = ButtonDone(self, file_name)
 				horizontal_box_layout.addWidget(button_done)
 
-			button_delete = ButtonDelete(self.list_widget, file_name)
-			horizontal_box_layout.addWidget(button_delete)
+				button_delete = ButtonDelete(self.list_widget, file_name)
+				horizontal_box_layout.addWidget(button_delete)
 
-			widget = QWidget()
-			widget.setLayout(horizontal_box_layout)
-			vertical_box_layout.addWidget(widget)
+				widget = QWidget()
+				widget.setLayout(horizontal_box_layout)
+				vertical_box_layout.addWidget(widget)
 
 			text_edit = QTextEdit(maximumHeight=27)
 			vertical_box_layout.addWidget(text_edit)
