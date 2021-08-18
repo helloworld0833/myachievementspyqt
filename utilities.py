@@ -27,3 +27,11 @@ def delete_item_from_file(item, file_name):
 		for line in lines:
 			if item.strip() != line.strip():
 				f.write(line)
+
+def calculate_points(lines):
+	calculate_points = 0
+
+	for line in lines:
+		calculate_points += int((line.strip().split(' ')[-2]))
+
+	return calculate_points

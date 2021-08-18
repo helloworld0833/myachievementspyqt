@@ -6,4 +6,4 @@ myachievementspyqt is a PyQt based task management tool.
 
 ![demo image](https://github.com/helloworld0833/myachievementspyqt/blob/master/demo.png?raw=true)
 
-Currently each task is automatically assigned with 10 points, you may change the credit by yourself by modifing the code.
+Currently each task is assigned with 1 point by default, you may change the number by yourself.

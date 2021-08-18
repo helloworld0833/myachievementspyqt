@@ -12,7 +12,7 @@ class Window(QMainWindow):
 
 		prior_widget = None
 		for file_name in [('dashboard', 'work'), ('dashboard', 'fun'), ('dashboard', 'note'), ('complete', 'work'), ('complete', 'fun')]:
-			widget = VBoxLayoutWidget()
+			widget = VBoxLayoutWidget(maximumWidth=280)
 			widget.set_layout(file_name)
 
 			if prior_widget:
