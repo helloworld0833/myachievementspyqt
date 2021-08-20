@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QTextBrowser, QHBoxLayout, QWidget, QTextEdit
+from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QTextBrowser, QHBoxLayout, QTextEdit
 from PyQt5.QtCore import Qt
 
 from list_widget import ListWidget
