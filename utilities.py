@@ -1,37 +1,37 @@
 def parser(file_input):
-	try:
-		file_input = file_input.decode('utf-8')
-	except UnicodeDecodeError:
-		file_input = file_input.decode('gbk')
+    try:
+        file_input = file_input.decode('utf-8')
+    except UnicodeDecodeError:
+        file_input = file_input.decode('gbk')
 
-	lines = []
-	for line in file_input.split('\r'):
-		if line.strip():
-			lines.append(line.strip()+'\n')
+    lines = []
+    for line in file_input.split('\r'):
+        if line.strip():
+            lines.append(line.strip()+'\n')
 
-	return lines
+    return lines
 
 def append_item_to_file(item, file_name):
-	if item[-1] != '\n':
-		item = item+'\n'
+    if item[-1] != '\n':
+        item = item+'\n'
 
-	with open(file_name, 'a') as f:
-		f.write(item)
+    with open(file_name, 'a') as f:
+        f.write(item)
 
 def delete_item_from_file(item, file_name):
-	with open(file_name, 'a+b') as f:
-		f.seek(0)
-		lines = parser(f.read())
+    with open(file_name, 'a+b') as f:
+        f.seek(0)
+        lines = parser(f.read())
 
-	with open(file_name, 'w') as f:
-		for line in lines:
-			if item.strip() != line.strip():
-				f.write(line)
+    with open(file_name, 'w') as f:
+        for line in lines:
+            if item.strip() != line.strip():
+                f.write(line)
 
 def calculate_points(lines):
-	calculate_points = 0
+    calculate_points = 0
 
-	for line in lines:
-		calculate_points += int((line.strip().split(' ')[-2]))
+    for line in lines:
+        calculate_points += int((line.strip().split(' ')[-2]))
 
-	return calculate_points
+    return calculate_points
